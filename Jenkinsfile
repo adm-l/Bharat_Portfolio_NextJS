@@ -8,18 +8,25 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/adm-l/Bharat_Portfolio_NextJS.git'
             }
         }
-
+        
+        stage('Install Dependencies') {
+            steps {
+                // Install the necessary dependencies for the Next.js project
+                sh 'npm install'
+            }
+        }
+        
         stage('Build') {
             steps {
                 // Example build step (replace with your actual build command)
-                sh 'echo "Building the project..."'
+                 sh 'npm run build'
             }
         }
 
         stage('Test') {
             steps {
                 // Example test step (replace with your actual test command)
-                sh 'echo "Running tests..."'
+                 sh 'npm run test'
             }
         }
 
