@@ -19,7 +19,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Example build step (replace with your actual build command)
-                 sh 'npm run dev'
+                 sh 'npm run build'
             }
         }
 
